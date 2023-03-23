@@ -46,4 +46,5 @@ def test_submission() -> None:
                     assert results[metric] < 1e-4
 
         output_file = test_dir / "submission.zip"
-        make_submission_archive(str(predictions_dir), str(mask_file), str(output_file))
+        success = make_submission_archive(str(predictions_dir), str(mask_file), str(output_file))
+        assert success
